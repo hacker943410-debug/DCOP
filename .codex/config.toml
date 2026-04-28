@@ -1,0 +1,58 @@
+# Codex Project Configuration - Pro-only orchestrated subagent harness
+# Scope: project-level .codex/config.toml
+
+model = "gpt-5.5"
+model_reasoning_effort = "medium"
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
+
+# Default local review model. Spark-owned small diffs do not receive an
+# extra GPT-5.5 review unless an escalation trigger is present.
+review_model = "gpt-5.3-codex"
+
+[agents]
+max_threads = 6
+max_depth = 1
+
+[profiles.default]
+model = "gpt-5.5"
+model_reasoning_effort = "medium"
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
+
+[profiles.planning]
+model = "gpt-5.5"
+model_reasoning_effort = "high"
+sandbox_mode = "read-only"
+approval_policy = "on-request"
+
+[profiles.review]
+model = "gpt-5.3-codex"
+model_reasoning_effort = "high"
+sandbox_mode = "read-only"
+approval_policy = "on-request"
+
+[profiles.security]
+model = "gpt-5.5"
+model_reasoning_effort = "high"
+sandbox_mode = "read-only"
+approval_policy = "on-request"
+
+[profiles.light]
+model = "gpt-5.4-mini"
+model_reasoning_effort = "medium"
+sandbox_mode = "read-only"
+approval_policy = "on-request"
+
+[profiles.spark]
+model = "gpt-5.3-codex-spark"
+model_reasoning_effort = "low"
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
+
+[profiles.ui_validation]
+model = "gpt-5.4-mini"
+model_reasoning_effort = "medium"
+sandbox_mode = "workspace-write"
+approval_policy = "on-request"
+

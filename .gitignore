@@ -1,0 +1,43 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build and cache output
+dist/
+build/
+out/
+.next/
+.turbo/
+.cache/
+coverage/
+playwright-report/
+test-results/
+
+# Logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Codex and local runtime scratch
+.codex/tmp/
+.codex/cache/
+
